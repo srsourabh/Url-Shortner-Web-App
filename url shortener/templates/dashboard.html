@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    
+   
+    <title>Url shortener</title>
+    <style>
+        
+      
+
+      
+    </style>
+</head>
+      </head>
+      <body>
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+              <ul class="navbar-nav mr-auto">
+                {% if session['username'] %}
+                <li class="nav-item">
+                    <a  href="{{url_for('log')}}" class="nav-links">Logout</a>
+                </li>
+                {% endif %}
+            </ul>
+               
+            </div>
+        
+
+        
+         <div class="jumbotron">
+            <div class="container">
+               <br />
+               {% if not short_url %}
+               <div class="row">
+                  <div class="col-md-offset-5 col-md-3">
+                     <h4>Enter URL to shorten.</h4>
+                     <form method="post" class="navbar-form navbar-right" action="">
+                        <div class="form-group">
+                           <input type="text" id="url" name="url" class="form-control input-lg chat-input" placeholder="URL" />
+                           <button type="submit" class="btn btn-lg btn-info">Submit</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               {% else %}
+               <div>
+                  Enjoy, your shortened URL is: <a href="{{short_url}}"> {{short_url}}</a>
+               </div>
+               {% endif %}
+            </div>
+         </div>
+         <footer>
+            <p style="color:white;">&copy; Akashdeep singh rana</p>
+         </footer>
+         </div> 
+      </body>
+   </html>
